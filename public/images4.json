@@ -1,0 +1,28 @@
+[
+  {
+    "category": "animals",
+    "images": [
+      "pets-antelope.jpg",
+      "pets-bear.jpg",
+      "pets-brid-glower.jpg",
+      "pets-coala.jpg",
+      "pets-colibri.jpg",
+      "pets-cow.jpg",
+      "pets-dog.jpg",
+      "pets-elephant.jpg"
+    ]
+  },
+  {
+    "category": "cars",
+    "images": [
+      "cars-aston.jpg",
+      "cars-mers1.jpg",
+      "cars-dodge1.jpg",
+      "cars-mers2.jpg",
+      "cars-jaguar.jpg",
+      "cars-audi.jpg",
+      "cars-audi2.jpg",
+      "cars-maserati.jpg"
+    ]
+  }
+]

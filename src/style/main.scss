@@ -1,0 +1,446 @@
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("../assets/fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-family: "RobotoMedium";
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1392px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+body {
+  height: 100%;
+}
+
+.game {
+  width: 1200px;
+  margin: 0 auto;
+
+  .cards-field {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    padding: 15px 5px;
+
+    .card-container {
+      box-sizing: border-box;
+      flex: 1 0 25%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      cursor: pointer;
+      perspective: 25rem;
+
+      &:hover > .card {
+        transform: translateZ(2rem);
+        box-shadow: 0 0.5rem 1rem black;
+      }
+
+      &.flipped > .card {
+        transform: rotateY(180deg) translateX(-100%);
+        transform-origin: left;
+      }
+
+      &.wrong > .card {
+        border: 1px solid red;
+      }
+
+      &.rigth > .card {
+        border: 1px solid green;
+      }
+
+      .card {
+        position: relative;
+        width: 50px;
+        height: 60px;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform-origin: right;
+        transition: all 0.5s;
+        border-radius: 10%;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0.5);
+        margin: 5px;
+        box-sizing: border-box;
+
+        &-front,
+        &-back {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: inherit;
+        }
+
+        .card-front {
+          background: coral;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .card-back {
+          background: url("../assets/card-back.jpg");
+          background-position: center;
+          background-size: cover;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+
+  .timer-b {
+    position: absolute;
+    top: 80px;
+    right: 320px;
+  }
+}
+
+
+.header {
+  display: flex;
+  //position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #2196f3;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .blue-logo {
+        display: flex;
+        justify-content: center;
+        width: 80px;
+        height: 20px;
+
+        .logo-route {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 16px;
+          letter-spacing: 1.25px;
+          color: #fff;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+
+      .white-logo {
+        width: 80px;
+        height: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+
+        .logo-route {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 16px;
+          letter-spacing: 1.25px;
+          color: #2196f3;
+          text-transform: uppercase;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .menu-desktop {
+      .navigation {
+        display: flex;
+
+        li {
+          list-style: none;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 15px;
+          text-align: center;
+          letter-spacing: 0.4px;
+          padding-left: 25px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+          .active {
+            color: #40fcfb;
+          }
+        }
+      }
+    }
+
+    .register {
+      .register-new {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 207px;
+        height: 36px;
+        background: #f2f9fe;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #2196f3;
+      }
+      .active {
+        color: #40fcfb;
+      }
+    }
+  }
+}
+
+//rules
+
+.rules {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .how-to-play-block {
+      width: 1000px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px;
+      color: #2196f3;
+      p {
+        width: 400px;
+      }
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+
+  .services_contents {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    width: 504px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px rgba(183, 183, 183, 0.32);
+    border-radius: 4px;
+
+    .services_item {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #fff;
+
+      .feedback-form-new {
+        padding: 24px 32px 32px;
+
+        .inputs {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          width: 440px;
+          line-height: 14px;
+          color: #1c1c1c;
+
+          .label {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 9px;
+            width: 300px;
+            left: 87px;
+            top: 4px;
+            color: red;
+          }
+
+          .about-input {
+            text-align: left;
+            height: 16px;
+            margin-bottom: 8px;
+          }
+
+          .feedback-form-main-input {
+            border: 1px solid #ced4da;
+            box-sizing: border-box;
+            height: 32px;
+            border-radius: 2px;
+            padding-left: 16px;
+            margin-bottom: 24px;
+
+            &::placeholder {
+              padding: 8px 0;
+              font-size: 12px;
+              color: #8a979f;
+            }
+          }
+
+          .valid {
+            border-color: #2196f3;
+          }
+
+          .invalid {
+            border-color: red;
+          }
+        }
+      }
+
+      .login-registraion {
+        display: flex;
+        justify-content: center;
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 184px;
+          height: 32px;
+          background: #2196f3;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+          border-radius: 2px;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          &:hover {
+            background-color: #8a979f;
+            text-decoration: none;
+            transition: 0.4s all ease;
+          }
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.game-settings {
+  margin: 20px;
+  .game-mode-text {
+    font-size: 18px;
+    color: #2196f3;
+    margin-bottom: 10px;
+  }
+  .form-choose-cards {
+    margin-bottom: 10px;
+  }
+
+  .game-card-text {
+    font-size: 18px;
+    color: #2196f3;
+    margin-bottom: 10px;
+  }
+
+  .form-choose-difficulty {
+    margin-bottom: 10px;
+  }
+}
+
+.victory-block {
+  position: absolute;
+  top: 64px;
+  width: 1200px;
+  height: 800px;
+  background: rgba(183, 183, 183, 0.32);
+  opacity: 0.7;
+
+  .win-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0 0 830px;
+
+    h2 {
+      color: #2196f3;
+      font-size: 24px;
+    }
+    p {
+      color: #2196f3;
+      font-size: 18px;
+    }
+  }
+}
+
+.block-window {
+  position: absolute;
+  top: 64px;
+  width: 1200px;
+  height: 1000px;
+  background: transparent;
+  opacity: 1.0;
+}
+
+.score {
+  padding: 10px 20px;
+  color: #2196f3;
+  .score-block {
+    .player {
+      color: #2196f3;
+      border-bottom: 1px #2196f3 solid;
+      margin: 10px 0;
+    }
+  }
+}
+
+.score-item,
+.name,
+.email {
+  color: #2196f3;
+  margin: 5px 0;
+}

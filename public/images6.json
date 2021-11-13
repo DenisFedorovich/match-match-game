@@ -1,0 +1,49 @@
+[
+    {
+        "category": "animals",
+        "images": [
+          "pets-antelope.jpg",
+          "pets-bear.jpg",
+          "pets-brid-glower.jpg",
+          "pets-coala.jpg",
+          "pets-colibri.jpg",
+          "pets-cow.jpg",
+          "pets-dog.jpg",
+          "pets-elephant.jpg",
+          "pets-flamingo.jpg",
+          "pets-fowl.jpg",
+          "pets-foxes.jpg",
+          "pets-giraffe.jpg",
+          "pets-horse.jpg",
+          "pets-horses.jpg",
+          "pets-iguana.jpg",
+          "pets-jaguar.jpg",
+          "pets-kangaroo.jpg",
+          "pets-lemur.jpg"
+        ]
+    },
+    {
+      "category": "cars",
+      "images": [
+        "cars-aston.jpg",
+        "cars-mers1.jpg",
+        "cars-dodge1.jpg",
+        "cars-mers2.jpg",
+        "cars-jaguar.jpg",
+        "cars-audi.jpg",
+        "cars-audi2.jpg",
+        "cars-maserati.jpg",
+        "cars-ford2.jpg",
+        "cars-dodge2.jpg",
+        "cars-honda.jpg",
+        "cars-acura.jpg",
+        "cars-acura2.jpg",
+        "cars-volga.jpg",
+        "cars-mustang.jpg",
+        "cars-alpha.jpg",
+        "cars-bmw.jpg",
+        "cars-rols.jpg"
+      ]
+    }
+]
+
